@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Graphik";
+  src: url("../public/fonts/Graphik.otf") format("opentype");
+}
+
+* {
+  font-family: "Graphik", sans-serif;
+}
+
+.title {
+  font-weight: bold;
+}

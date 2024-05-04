@@ -7,6 +7,9 @@ import Homepage from "./page/Home";
 // Import bootstrap style
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Import general style
+import "./index.scss";
+
 const router = createBrowserRouter([
   {
     path: "/",
