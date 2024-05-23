@@ -3,6 +3,15 @@
   src: url("../public/fonts/Graphik.otf") format("opentype");
 }
 
+:root {
+  --background-color: #f1f8fc;
+  --primary-color: #0074c7;
+  --secondary-color: #00497c;
+  --tertiary-color: #384050;
+  --accent-color: #cd2c2e;
+  --accent-variant-color: #82b864;
+}
+
 * {
   font-family: "Graphik", sans-serif;
 }
