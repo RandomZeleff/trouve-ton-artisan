@@ -22,7 +22,7 @@ export function ArtisanPage() {
     <p>Chargement en cours..</p>
   ) : (
     <Container>
-      <h1 className="title text-center my-3">Description de l'artisan</h1>
+      <h1 className="title my-3">Description de l'artisan</h1>
 
       <ArtisanInfo
         name={artisan.name}
@@ -32,9 +32,14 @@ export function ArtisanPage() {
         image={artisan.image}
       />
 
-      <div className="mt-3 p-2">
-        <h2 className="title">Prendre contact</h2>
-        <ContactForm />
+      <div
+        className="mt-3 p-2"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        <div style={{ maxWidth: "500px", width: "100%" }}>
+          <h2 className="title">Prendre contact</h2>
+          <ContactForm />
+        </div>
       </div>
     </Container>
   );
