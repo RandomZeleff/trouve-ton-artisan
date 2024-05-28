@@ -1,23 +1,23 @@
 [
   {
-    "name": "Robert Silbort",
+    "name": "Robert Sillbort",
     "speciality": "Sculpteur",
     "localisation": "Annecy",
     "image": "../img/fabrice.jpg",
     "note": 2
   },
   {
-    "name": "Robert Silbort",
-    "speciality": "Sculpteur",
-    "localisation": "Annecy",
+    "name": "Sabrina Carpenter",
+    "speciality": "Fabrication",
+    "localisation": "Paris",
     "image": "../img/fabrice.jpg",
-    "note": 2
+    "note": 3
   },
   {
-    "name": "Robert Silbort",
-    "speciality": "Sculpteur",
-    "localisation": "Annecy",
+    "name": "Emma Wattson",
+    "speciality": "Batiment",
+    "localisation": "Nantes",
     "image": "../img/fabrice.jpg",
-    "note": 2
+    "note": 5
   }
 ]
