@@ -2,7 +2,13 @@ import { Card } from "react-bootstrap";
 import styles from "./styles/artisanCard.module.scss";
 import createStarsNote from "../functions/createStarsNote";
 
-export function ArtisanCard({ name, image, speciality, localisation, note }) {
+export default function ArtisanCard({
+  name,
+  image,
+  speciality,
+  localisation,
+  note,
+}) {
   return (
     <Card>
       <Card.Body>
