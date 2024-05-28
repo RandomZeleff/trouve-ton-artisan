@@ -11,19 +11,26 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 import { ArtisansPage } from "./page/Artisans";
 import { ArtisanPage } from "./page/Artisan";
+import Layout from "./components/layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage />,
-  },
-  {
-    path: "/artisans",
-    element: <ArtisansPage />,
-  },
-  {
-    path: "/artisan/:id",
-    element: <ArtisanPage />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/artisans",
+        element: <ArtisansPage />,
+      },
+      {
+        path: "/artisan/:id",
+        element: <ArtisanPage />,
+      },
+    ],
   },
 ]);
 
