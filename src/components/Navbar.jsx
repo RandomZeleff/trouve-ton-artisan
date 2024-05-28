@@ -6,8 +6,12 @@ import {
   Nav,
   ListGroup,
   Container,
+  Image,
 } from "react-bootstrap";
 import artisans from "../data/artisans.json";
+import {} from "react-router-dom";
+import createStarsNote from "../functions/createStarsNote";
+import { Link } from "react-router-dom";
 
 export default function NavbarComponent() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,7 +60,7 @@ export default function NavbarComponent() {
             <Nav.Link href="#action2">Fabrication</Nav.Link>
             <Nav.Link href="#action2">Alimentation</Nav.Link>
           </Nav>
-          <Form className="d-flex position-relative">
+          <Form className="d-flex position-relative col-lg-5">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -73,7 +77,37 @@ export default function NavbarComponent() {
             {showResults && (
               <ListGroup className="position-absolute top-100 w-100 mt-2">
                 {searchResults.map((result, index) => (
-                  <ListGroup.Item key={index}>{result.name}</ListGroup.Item>
+                  <ListGroup.Item key={index}>
+                    <Link className="d-flex gap-3">
+                      {/* Image de l'artisan */}
+                      <div>
+                        <Image
+                          src={result.image}
+                          alt={`Photo de ${result.name}`}
+                          style={{
+                            maxWidth: "50px",
+                            height: "50px",
+                            objectFit: "cover",
+                          }}
+                          className="rounded-1"
+                        />
+                      </div>
+
+                      {/* Informations de l'artisan */}
+                      <div>
+                        <h4 className="h6 title">{result.name}</h4>
+                        <p className="text-xs">
+                          <span style={{ fontWeight: "bold" }}>
+                            Spécialité:
+                          </span>{" "}
+                          {result.speciality}
+                          <br />
+                          <span style={{ fontWeight: "bold" }}>Note:</span>{" "}
+                          {createStarsNote(result.note)}
+                        </p>
+                      </div>
+                    </Link>
+                  </ListGroup.Item>
                 ))}
               </ListGroup>
             )}
