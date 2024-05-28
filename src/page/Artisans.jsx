@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import artisans from "../data/artisans.json";
-import { ArtisanCard } from "../components/ArtisanCard";
+import ArtisanCard from "../components/ArtisanCard";
 
 export function ArtisansPage() {
   return (
@@ -8,8 +8,9 @@ export function ArtisansPage() {
       <h1 className="title my-3">Liste des artisans</h1>
 
       <div className="d-flex flex-column gap-3">
-        {artisans.map((artisan) => (
+        {artisans.map((artisan, index) => (
           <ArtisanCard
+            key={index}
             name={artisan.name}
             image={artisan.image}
             localisation={artisan.localisation}
