@@ -1,5 +1,5 @@
-const starFull = <i class="fa-solid fa-star" />;
-const starEmpty = <i class="fa-regular fa-star" />;
+const starFull = <i className="fa-solid fa-star" />;
+const starEmpty = <i className="fa-regular fa-star" />;
 
 const createStarsNote = (length) => {
   const fullStarLength = length;
