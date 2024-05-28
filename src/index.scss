@@ -16,6 +16,11 @@
   font-family: "Graphik", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .title {
   font-weight: bold;
   color: var(--primary-color);
