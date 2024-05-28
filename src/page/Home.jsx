@@ -1,5 +1,5 @@
 import artisans from "../data/artisans.json";
-import { ArtisanCard } from "../components/ArtisanCard";
+import ArtisanCard from "../components/ArtisanCard";
 import Step from "../components/Step";
 
 const steps = [
@@ -16,8 +16,8 @@ export default function Homepage() {
       <div className="mb-5">
         <h1 className="title">Comment trouver mon artisan ?</h1>
         <div className="d-flex flex-column gap-3">
-          {steps.map((step) => (
-            <Step text={step} />
+          {steps.map((step, index) => (
+            <Step key={index} text={step} />
           ))}
         </div>
       </div>
@@ -26,8 +26,8 @@ export default function Homepage() {
       <div>
         <h2 className="title">Les artisans du mois</h2>
         <div className="d-flex flex-wrap gap-3">
-          {artisans.map((artisan) => (
-            <div className="col-12 col-lg-5">
+          {artisans.map((artisan, index) => (
+            <div key={index} className="col-12 col-lg-5">
               <ArtisanCard
                 name={artisan.name}
                 image={artisan.image}
