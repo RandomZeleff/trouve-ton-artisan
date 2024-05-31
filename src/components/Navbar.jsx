@@ -47,7 +47,9 @@ export default function NavbarComponent() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Trouve ton Artisan</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img src="./img/logo.png" alt="" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
