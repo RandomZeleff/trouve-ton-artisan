@@ -45,7 +45,7 @@ export default function NavbarComponent() {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
           <img src="./img/logo.png" alt="" />
