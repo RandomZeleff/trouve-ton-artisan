@@ -65,7 +65,7 @@ export default function NavbarComponent() {
           <Form className="d-flex position-relative col-lg-5">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Rechercher"
               className="me-2"
               aria-label="Search"
               value={searchTerm}
@@ -103,6 +103,11 @@ export default function NavbarComponent() {
                             Spécialité:
                           </span>{" "}
                           {result.speciality}
+                          <br />
+                          <span style={{ fontWeight: "bold" }}>
+                            Localisation:
+                          </span>{" "}
+                          {result.localisation}
                           <br />
                           <span style={{ fontWeight: "bold" }}>Note:</span>{" "}
                           {createStarsNote(result.note)}
