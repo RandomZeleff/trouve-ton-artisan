@@ -26,17 +26,20 @@ export default function Homepage() {
       <div>
         <h2 className="title">Les artisans du mois</h2>
         <div className="d-flex flex-wrap gap-3">
-          {artisans.map((artisan, index) => (
-            <div key={index} className="col-12 col-lg-5">
-              <ArtisanCard
-                name={artisan.name}
-                image={artisan.image}
-                localisation={artisan.localisation}
-                speciality={artisan.speciality}
-                note={artisan.note}
-              />
-            </div>
-          ))}
+          {artisans
+            .sort((a, b) => b.note - a.note)
+            .slice(0, 4)
+            .map((artisan, index) => (
+              <div key={index} className="col-12 col-lg-5">
+                <ArtisanCard
+                  name={artisan.name}
+                  image={artisan.image}
+                  localisation={artisan.localisation}
+                  speciality={artisan.speciality}
+                  note={artisan.note}
+                />
+              </div>
+            ))}
         </div>
       </div>
     </div>
