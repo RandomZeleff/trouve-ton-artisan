@@ -13,7 +13,11 @@ export default function ArtisanCard({
     <Card>
       <Card.Body>
         <div className="d-flex align-items-center gap-3">
-          <Card.Img className={styles["cardImg"]} src={image} />
+          <Card.Img
+            className={styles["cardImg"]}
+            src={image}
+            alt={`Image de ${name}`}
+          />
           <Card.Title className="title">{name}</Card.Title>
         </div>
         <Card.Text>
