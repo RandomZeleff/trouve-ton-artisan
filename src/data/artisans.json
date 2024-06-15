@@ -1,23 +1,58 @@
 [
   {
     "name": "Robert Sillbort",
-    "speciality": "Sculpteur",
+    "speciality": "Batiment",
     "localisation": "Annecy",
     "image": "../img/fabrice.jpg",
     "note": 2
   },
   {
     "name": "Sabrina Carpenter",
-    "speciality": "Fabrication",
+    "speciality": "Batiment",
     "localisation": "Paris",
     "image": "../img/fabrice.jpg",
     "note": 3
   },
   {
     "name": "Emma Wattson",
-    "speciality": "Batiment",
+    "speciality": "Fabrication",
     "localisation": "Nantes",
     "image": "../img/fabrice.jpg",
     "note": 5
+  },
+  {
+    "name": "Hugo Décrypte",
+    "speciality": "Fabrication",
+    "localisation": "Nantes",
+    "image": "../img/fabrice.jpg",
+    "note": 3
+  },
+  {
+    "name": "Neil Armstrong",
+    "speciality": "Services",
+    "localisation": "Nantes",
+    "image": "../img/fabrice.jpg",
+    "note": 4
+  },
+  {
+    "name": "Cristophe Colomb",
+    "speciality": "Services",
+    "localisation": "Nantes",
+    "image": "../img/fabrice.jpg",
+    "note": 2
+  },
+  {
+    "name": "Marie Nade",
+    "speciality": "Alimentation",
+    "localisation": "Nantes",
+    "image": "../img/fabrice.jpg",
+    "note": 1
+  },
+  {
+    "name": "Ali Gator",
+    "speciality": "Alimentation",
+    "localisation": "Nantes",
+    "image": "../img/fabrice.jpg",
+    "note": 4
   }
 ]
