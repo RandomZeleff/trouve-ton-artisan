@@ -6,12 +6,9 @@ import {
   Nav,
   ListGroup,
   Container,
-  Image,
 } from "react-bootstrap";
 import artisans from "../data/artisans.json";
-import {} from "react-router-dom";
-import createStarsNote from "../functions/createStarsNote";
-import { Link } from "react-router-dom";
+import SearchResult from "./SearchResult";
 
 export default function NavbarComponent() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,18 +20,29 @@ export default function NavbarComponent() {
     setSearchTerm(value);
 
     if (value.length > 2) {
-      // Simuler des résultats de recherche pour la démonstration
-      const results = artisans.filter(
-        (artisan) =>
-          artisan.name.toLowerCase().startsWith(value.toLowerCase()) ||
-          artisan.localisation.toLowerCase().startsWith(value.toLowerCase()) ||
-          artisan.speciality.toLowerCase().startsWith(value.toLowerCase())
-      );
+      // Recherche des artisans en fonction de son nom, ville ou spécialité.
+      const results = artisans
+        .filter(
+          (artisan) =>
+            artisan.name.toLowerCase().startsWith(value.toLowerCase()) ||
+            artisan.localisation
+              .toLowerCase()
+              .startsWith(value.toLowerCase()) ||
+            artisan.speciality.toLowerCase().startsWith(value.toLowerCase())
+        )
+        .sort((a, b) => b.note - a.note) // Tri par note
+        .slice(0, 5); // Récupère uniquement les 5 premiers résultats
 
+      // Met à jour les résultats.
       setSearchResults(results);
+
+      // Affiche les résultats.
       setShowResults(true);
     } else {
+      // Clear les résultats.
       setSearchResults([]);
+
+      // Ne plus afficher les résultats.
       setShowResults(false);
     }
   };
@@ -46,9 +54,13 @@ export default function NavbarComponent() {
 
   return (
     <Navbar expand="lg">
-      <Container fluid>
-        <Navbar.Brand href="#">
-          <img src="./img/logo.png" alt="" />
+      <Container className="d-flex" fluid>
+        <Navbar.Brand href="/">
+          <img
+            src="./img/logo.png"
+            alt="Site logo"
+            style={{ maxWidth: "200px" }}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -57,10 +69,10 @@ export default function NavbarComponent() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Bâtiment</Nav.Link>
-            <Nav.Link href="#action2">Services</Nav.Link>
-            <Nav.Link href="#action2">Fabrication</Nav.Link>
-            <Nav.Link href="#action2">Alimentation</Nav.Link>
+            <Nav.Link href="#batiment">Bâtiment</Nav.Link>
+            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="#fabrication">Fabrication</Nav.Link>
+            <Nav.Link href="#alimentation">Alimentation</Nav.Link>
           </Nav>
           <Form className="d-flex position-relative col-lg-5">
             <Form.Control
@@ -79,42 +91,7 @@ export default function NavbarComponent() {
             {showResults && (
               <ListGroup className="position-absolute top-100 w-100 mt-2">
                 {searchResults.map((result, index) => (
-                  <ListGroup.Item key={index}>
-                    <Link className="d-flex gap-3">
-                      {/* Image de l'artisan */}
-                      <div>
-                        <Image
-                          src={result.image}
-                          alt={`Photo de ${result.name}`}
-                          style={{
-                            maxWidth: "50px",
-                            height: "50px",
-                            objectFit: "cover",
-                          }}
-                          className="rounded-1"
-                        />
-                      </div>
-
-                      {/* Informations de l'artisan */}
-                      <div>
-                        <h4 className="h6 title">{result.name}</h4>
-                        <p className="text-xs">
-                          <span style={{ fontWeight: "bold" }}>
-                            Spécialité:
-                          </span>{" "}
-                          {result.speciality}
-                          <br />
-                          <span style={{ fontWeight: "bold" }}>
-                            Localisation:
-                          </span>{" "}
-                          {result.localisation}
-                          <br />
-                          <span style={{ fontWeight: "bold" }}>Note:</span>{" "}
-                          {createStarsNote(result.note)}
-                        </p>
-                      </div>
-                    </Link>
-                  </ListGroup.Item>
+                  <SearchResult key={index} result={result} />
                 ))}
               </ListGroup>
             )}
