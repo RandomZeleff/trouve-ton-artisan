@@ -12,11 +12,13 @@ import "./index.scss";
 import { ArtisansPage } from "./page/Artisans";
 import { ArtisanPage } from "./page/Artisan";
 import Layout from "./components/layout";
+import NotFound from "./page/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
