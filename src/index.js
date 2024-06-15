@@ -13,6 +13,10 @@ import { ArtisansPage } from "./page/Artisans";
 import { ArtisanPage } from "./page/Artisan";
 import Layout from "./components/layout";
 import NotFound from "./page/NotFound";
+import Legals from "./page/Legals";
+import Cookies from "./page/Cookies";
+import Accessibility from "./page/Accessibility";
+import PersonalData from "./page/PersonalData";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,22 @@ const router = createBrowserRouter([
       {
         path: "/artisan/:id",
         element: <ArtisanPage />,
+      },
+      {
+        path: "/legals",
+        element: <Legals />,
+      },
+      {
+        path: "/cookies",
+        element: <Cookies />,
+      },
+      {
+        path: "/accessibility",
+        element: <Accessibility />,
+      },
+      {
+        path: "/personal-data",
+        element: <PersonalData />,
       },
     ],
   },
