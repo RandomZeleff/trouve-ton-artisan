@@ -64,11 +64,7 @@ export default function NavbarComponent() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
+          <Nav className="me-auto my-2 my-lg-0" navbarScroll>
             <Nav.Link href="#batiment">Bâtiment</Nav.Link>
             <Nav.Link href="#services">Services</Nav.Link>
             <Nav.Link href="#fabrication">Fabrication</Nav.Link>
@@ -89,7 +85,7 @@ export default function NavbarComponent() {
               <i className="fa-solid fa-magnifying-glass" />
             </Button>
             {showResults && (
-              <ListGroup className="position-absolute top-100 w-100 mt-2">
+              <ListGroup className="position-absolute top-100 w-100 mt-2 z-3">
                 {searchResults.map((result, index) => (
                   <SearchResult key={index} result={result} />
                 ))}
