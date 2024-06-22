@@ -1,11 +1,15 @@
 import { Button, Container, Form } from "react-bootstrap";
 import artisans from "../data/artisans.json";
 import ArtisanCard from "../components/ArtisanCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export function ArtisansPage() {
+  const { id } = useParams();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState(artisans);
+  const [categoryToSearch, setCategoryToSearch] = useState(id);
 
   const handleSearchChange = (event) => {
     const value = event.target.value;
@@ -33,24 +37,51 @@ export function ArtisansPage() {
     }
   };
 
+  useEffect(() => {
+    if (id) {
+      const results = artisans.filter(
+        (artisan) => artisan.speciality.toLowerCase() === id.toLowerCase()
+      );
+
+      setSearchResults(results);
+    }
+  }, []);
+
   return (
     <Container>
       <h1 className="title my-3">Liste des artisans</h1>
 
-      <Form className="d-flex position-relative mb-3">
-        <Form.Control
-          type="search"
-          placeholder="Rechercher"
-          className="me-2"
-          aria-label="Search"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          onFocus={() => searchTerm.length > 2}
-        />
-        <Button variant="primary">
-          <i className="fa-solid fa-magnifying-glass" />
-        </Button>
-      </Form>
+      {!id && (
+        <Form className="d-flex position-relative mb-3">
+          <Form.Control
+            type="search"
+            placeholder="Rechercher"
+            className="me-2"
+            aria-label="Search"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            onFocus={() => searchTerm.length > 2}
+          />
+          <Button variant="primary">
+            <i className="fa-solid fa-magnifying-glass" />
+          </Button>
+        </Form>
+      )}
+
+      <p
+        style={{
+          display: `${id ? "block" : "none"}`,
+        }}
+      >
+        Liste des artisans ayant pour spécialité{" "}
+        <span
+          style={{
+            fontWeight: "bold",
+          }}
+        >
+          {categoryToSearch.charAt(0).toUpperCase() + categoryToSearch.slice(1)}
+        </span>
+      </p>
 
       <div className="d-flex flex-column gap-3">
         {searchResults.map((artisan, index) => (

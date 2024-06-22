@@ -65,10 +65,10 @@ export default function NavbarComponent() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-            <Nav.Link href="#batiment">Bâtiment</Nav.Link>
-            <Nav.Link href="#services">Services</Nav.Link>
-            <Nav.Link href="#fabrication">Fabrication</Nav.Link>
-            <Nav.Link href="#alimentation">Alimentation</Nav.Link>
+            <Nav.Link href="/category/batiment">Bâtiment</Nav.Link>
+            <Nav.Link href="/category/services">Services</Nav.Link>
+            <Nav.Link href="/category/fabrication">Fabrication</Nav.Link>
+            <Nav.Link href="/category/alimentation">Alimentation</Nav.Link>
           </Nav>
           <Form className="d-flex position-relative col-lg-5">
             <Form.Control
