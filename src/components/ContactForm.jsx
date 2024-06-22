@@ -38,9 +38,10 @@ export default function ContactForm() {
    * @returns {string}
    */
   const inputNotEmpty = () => {
-    if (!name) return "Veuillez renseigner votre nom.";
-    else if (!subject) return "Veuillez renseigner l'objet du message.";
-    else if (!message) return "Veuillez indiquer un message.";
+    if (!name.trim().length) return "Veuillez renseigner votre nom.";
+    else if (!subject.trim().length)
+      return "Veuillez renseigner l'objet du message.";
+    else if (!message.trim().length) return "Veuillez indiquer un message.";
     else return "";
   };
 
