@@ -9,7 +9,7 @@ export function ArtisansPage() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState(artisans);
-  const [categoryToSearch, setCategoryToSearch] = useState(id);
+  const categoryToSearch = id ? id.charAt(0).toUpperCase() + id.slice(1) : null;
 
   const handleSearchChange = (event) => {
     const value = event.target.value;
@@ -79,8 +79,9 @@ export function ArtisansPage() {
             fontWeight: "bold",
           }}
         >
-          {categoryToSearch.charAt(0).toUpperCase() + categoryToSearch.slice(1)}
+          {categoryToSearch}
         </span>
+        .
       </p>
 
       <div className="d-flex flex-column gap-3">

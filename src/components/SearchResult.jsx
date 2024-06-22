@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function SearchResult({ result }) {
   return (
     <ListGroup.Item>
-      <Link className="d-flex gap-3">
+      <Link to={`/artisans/${result.id}`} className="d-flex gap-3">
         {/* Image de l'artisan */}
         <div>
           <Image

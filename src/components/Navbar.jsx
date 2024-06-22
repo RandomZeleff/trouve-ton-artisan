@@ -47,11 +47,6 @@ export default function NavbarComponent() {
     }
   };
 
-  const handleBlur = () => {
-    // Masquer les résultats lorsque l'utilisateur clique hors du menu
-    setShowResults(false);
-  };
-
   return (
     <Navbar expand="lg">
       <Container className="d-flex" fluid>
@@ -78,7 +73,6 @@ export default function NavbarComponent() {
               aria-label="Search"
               value={searchTerm}
               onChange={handleSearchChange}
-              onBlur={handleBlur}
               onFocus={() => searchTerm.length > 2 && setShowResults(true)}
             />
             <Button variant="primary">

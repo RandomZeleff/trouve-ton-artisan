@@ -6,17 +6,18 @@ import artisans from "../data/artisans.json";
 import ContactForm from "../components/ContactForm";
 
 export function ArtisanPage() {
-  const [artisan, setArtisan] = useState(null);
-  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
+  const [artisan, setArtisan] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const artisan = artisans[id];
+    const artisan = artisans.find((artisan) => artisan.id === Number(id));
     if (!artisan) throw Error(`Aucun artisan trouvé avec l'id ${id}.`);
 
     setArtisan(artisan);
     setLoading(false);
-  }, []);
+  }, [id]);
 
   return loading ? (
     <p>Chargement en cours..</p>
