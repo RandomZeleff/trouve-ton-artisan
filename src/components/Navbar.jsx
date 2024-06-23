@@ -25,9 +25,7 @@ export default function NavbarComponent() {
         .filter(
           (artisan) =>
             artisan.name.toLowerCase().startsWith(value.toLowerCase()) ||
-            artisan.localisation
-              .toLowerCase()
-              .startsWith(value.toLowerCase()) ||
+            artisan.location.toLowerCase().startsWith(value.toLowerCase()) ||
             artisan.speciality.toLowerCase().startsWith(value.toLowerCase())
         )
         .sort((a, b) => b.note - a.note) // Tri par note
@@ -80,8 +78,8 @@ export default function NavbarComponent() {
             </Button>
             {showResults && (
               <ListGroup className="position-absolute top-100 w-100 mt-2 z-3">
-                {searchResults.map((result, index) => (
-                  <SearchResult key={index} result={result} />
+                {searchResults.map((result) => (
+                  <SearchResult key={result.id} result={result} />
                 ))}
               </ListGroup>
             )}

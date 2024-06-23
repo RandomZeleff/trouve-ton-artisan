@@ -12,7 +12,7 @@ export function ArtisanPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const artisan = artisans.find((artisan) => artisan.id === Number(id));
+    const artisan = artisans.find((artisan) => artisan.id == id);
     if (!artisan) throw Error(`Aucun artisan trouvé avec l'id ${id}.`);
 
     setArtisan(artisan);
@@ -28,8 +28,9 @@ export function ArtisanPage() {
       <ArtisanInfo
         name={artisan.name}
         speciality={artisan.speciality}
+        description={artisan.about}
         note={artisan.note}
-        localisation={artisan.localisation}
+        location={artisan.location}
         image={artisan.image}
       />
 

@@ -40,7 +40,7 @@ export function ArtisansPage() {
   useEffect(() => {
     if (id) {
       const results = artisans.filter(
-        (artisan) => artisan.speciality.toLowerCase() === id.toLowerCase()
+        (artisan) => artisan.category.toLowerCase() === id.toLowerCase()
       );
 
       setSearchResults(results);
@@ -88,9 +88,9 @@ export function ArtisansPage() {
         {searchResults.map((artisan, index) => (
           <ArtisanCard
             key={index}
-            name={artisan.name}
+            id={artisan.id}
             image={artisan.image}
-            localisation={artisan.localisation}
+            location={artisan.location}
             speciality={artisan.speciality}
             note={artisan.note}
           />

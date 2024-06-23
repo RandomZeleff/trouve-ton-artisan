@@ -9,7 +9,7 @@ export default function SearchResult({ result }) {
         {/* Image de l'artisan */}
         <div>
           <Image
-            src={result.image}
+            src={"/img/fabrice.jpg"}
             alt={`Photo de ${result.name}`}
             style={{
               maxWidth: "50px",
@@ -28,10 +28,10 @@ export default function SearchResult({ result }) {
             {result.speciality}
             <br />
             <span style={{ fontWeight: "bold" }}>Localisation:</span>{" "}
-            {result.localisation}
+            {result.location}
             <br />
             <span style={{ fontWeight: "bold" }}>Note:</span>{" "}
-            {createStarsNote(result.note)}
+            {createStarsNote(Number(Math.round(result.note)))}
           </p>
         </div>
       </Link>

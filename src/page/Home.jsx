@@ -27,13 +27,13 @@ export default function Homepage() {
         <h2 className="title">Les artisans du mois</h2>
         <div className="d-flex flex-wrap gap-3">
           {artisans
-            .sort((a, b) => b.note - a.note)
+            .sort((a, b) => Number(b.note) - Number(a.note))
             .slice(0, 4)
             .map((artisan, index) => (
               <div key={index} className="col-12 col-lg-5">
                 <ArtisanCard
                   name={artisan.name}
-                  image={artisan.image}
+                  id={artisan.id}
                   localisation={artisan.localisation}
                   speciality={artisan.speciality}
                   note={artisan.note}
