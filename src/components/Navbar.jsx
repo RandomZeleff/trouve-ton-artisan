@@ -52,7 +52,7 @@ export default function NavbarComponent() {
       <Container className="d-flex" fluid>
         <Navbar.Brand href="/">
           <img
-            src="./img/logo.png"
+            src="/img/logo.png"
             alt="Site logo"
             style={{ maxWidth: "200px" }}
           />
