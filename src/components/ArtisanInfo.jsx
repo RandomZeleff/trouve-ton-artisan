@@ -7,12 +7,7 @@ export function ArtisanInfo({ name, description, note, speciality, location }) {
     <Card>
       <Card.Body>
         <div className="d-flex align-items-center gap-3">
-          <Card.Img
-            className={styles["cardImg"]}
-            src={"/img/fabrice.jpg"}
-            alt={`Image de ${name}`}
-          />
-          <Card.Title className="title px-3">{name}</Card.Title>
+          <Card.Title className="title">{name}</Card.Title>
         </div>
         <Card.Text className="mt-3">
           <span className={styles["cardInfo"]}>A propos:</span>{" "}
