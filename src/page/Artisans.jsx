@@ -89,6 +89,7 @@ export function ArtisansPage() {
           <ArtisanCard
             key={index}
             id={artisan.id}
+            name={artisan.name}
             location={artisan.location}
             speciality={artisan.speciality}
             note={artisan.note}
